@@ -1,0 +1,62 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build --port 3033",
+    "dev": "nuxt dev --port 3033",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^0.6.1",
+    "@nuxt/fonts": "^0.10.2",
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/fontaine": "^0.4.4",
+    "@nuxtjs/robots": "^4.1.11",
+    "@nuxtjs/sitemap": "^6.1.5",
+    "@pinia/nuxt": "^0.7.0",
+    "mitt": "^3.0.1",
+    "nuxt": "^3.14.159",
+    "pinia": "^2.2.6",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^3.14.4",
+    "@nuxtjs/stylelint-module": "^5.2.0",
+    "@stylistic/stylelint-plugin": "^3.1.1",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^15.11.6",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "playwright-core": "^1.48.2",
+    "postcss-html": "^1.7.0",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.80.7",
+    "stylelint": "^16.10.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.9.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.14.0",
+    "vitest": "^2.1.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && bun test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     'nuxt-typeorm',
     'nuxt-auth-utils',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
   devtools: {
     enabled: process.env.NODE_ENV === 'development',
@@ -68,5 +70,41 @@ export default defineNuxtConfig({
     config: {
       stylistic: true,
     },
+  },
+  robots: {
+    sitemap: [
+      '/sitemap.xml',
+    ],
+    debug: false,
+    credits: false,
+    disallow: [
+      '/auth',
+    ],
+  },
+  sitemap: {
+    sources: [
+      '/api/__sitemap__/urls',
+    ],
+    exclude: [
+      '/profile',
+      '/auth',
+    ],
+    defaults: {
+      lastmod: new Date().toISOString(),
+      priority: 0.8,
+      changefreq: 'weekly',
+    },
+    xslColumns: [
+      { label: 'URL', width: '50%' },
+      { label: 'Last Modified', select: 'sitemap:lastmod', width: '20%' },
+      { label: 'Priority', select: 'sitemap:priority', width: '12.5%' },
+      { label: 'Change Frequency', select: 'sitemap:changefreq', width: '12.5%' },
+      { label: 'Hreflangs', select: 'count(xhtml:link)', width: '5%' },
+    ],
+    xslTips: false,
+    autoLastmod: true,
+    autoI18n: true,
+    credits: false,
+    debug: false,
   },
 })

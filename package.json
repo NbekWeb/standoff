@@ -20,11 +20,19 @@
     "@nuxtjs/robots": "^4.1.11",
     "@nuxtjs/sitemap": "^6.1.5",
     "@pinia/nuxt": "^0.7.0",
+    "@sidebase/nuxt-auth": "^0.9.4",
+    "class-validator": "^0.14.1",
+    "h3-zod": "^0.5.3",
     "mitt": "^3.0.1",
+    "mysql2": "^3.11.4",
+    "neverthrow": "^8.1.1",
     "nuxt": "^3.14.159",
+    "nuxt-auth-utils": "^0.5.4",
+    "nuxt-typeorm": "^0.0.8",
     "pinia": "^2.2.6",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@nuxt/test-utils": "^3.14.4",

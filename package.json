@@ -32,8 +32,11 @@
     "nuxt-auth-utils": "^0.5.4",
     "nuxt-typeorm": "^0.0.8",
     "pinia": "^2.2.6",
+    "source-map-js": "^1.2.1",
     "vue": "latest",
+    "vue-final-modal": "^4.5.5",
     "vue-router": "latest",
+    "winston": "^3.17.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils/module',
     '@nuxt/eslint',
     '@nuxtjs/stylelint-module',
+    'nuxt3-notifications',
     '@pinia/nuxt',
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
@@ -44,8 +45,14 @@ export default defineNuxtConfig({
       maxRequests: 25,
     },
 
-    public: {
-      appVersion: '0.3.2',
+    logger: {
+      level: process.env.LOGGER_LEVEL || 'info',
+      telegram: {
+        chat: process.env.LOGGER_TELEGRAM_CHAT,
+      },
+    },
+    telegram: {
+      token: process.env.TELEGRAM_TOKEN,
     },
   },
   future: {

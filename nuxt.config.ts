@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    '@nuxt/test-utils/module',
     '@nuxt/eslint',
     '@nuxtjs/stylelint-module',
     '@pinia/nuxt',
@@ -28,6 +29,14 @@ export default defineNuxtConfig({
       synchronize: process.env.TYPEORM_SYNCHRONIZE === 'true',
       logging: process.env.TYPEORM_LOGGING === 'true',
       type: 'mysql',
+      cache: {
+        type: 'ioredis',
+        options: {
+          host: process.env.REDIS_HOST,
+          port: process.env.REDIS_PORT,
+        },
+        duration: 30000,
+      },
     },
 
     rateLimit: {
@@ -53,6 +62,25 @@ export default defineNuxtConfig({
           'Cache-Control': 'no-store',
         },
         status: process.env.NODE_ENV === 'development' ? 200 : 403,
+      },
+    },
+    esbuild: {
+      options: {
+        tsconfigRaw: {
+          compilerOptions: {
+            emitDecoratorMetadata: true,
+            experimentalDecorators: true,
+          },
+        },
+      },
+    },
+    typescript: {
+      tsConfig: {
+        compilerOptions: {
+          emitDecoratorMetadata: true,
+          experimentalDecorators: true,
+          strictPropertyInitialization: false,
+        },
       },
     },
   },

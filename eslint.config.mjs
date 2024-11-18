@@ -61,5 +61,6 @@ export default withNuxt({
     }],
     '@typescript-eslint/no-loop-func': ['off'],
     '@stylistic/type-annotation-spacing': 'error',
+    '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
   },
 })

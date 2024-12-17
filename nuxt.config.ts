@@ -2,11 +2,10 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/test-utils/module',
-    '@nuxt/eslint',
-    '@nuxtjs/stylelint-module',
+    // '@nuxt/eslint',
+    // '@nuxtjs/stylelint-module',
     'nuxt3-notifications',
     '@pinia/nuxt',
-    '@nuxt/eslint',
     '@nuxt/test-utils/module',
     'nuxt-typeorm',
     'nuxt-auth-utils',
@@ -40,6 +39,12 @@ export default defineNuxtConfig({
       },
     },
 
+    redis: {
+      ip: process.env.REDIS_HOST,
+      port: Number(process.env.REDIS_PORT ?? '6379'),
+      password: process.env.REDIS_PASSWORD,
+    },
+
     rateLimit: {
       perTime: 10 * 1000,
       maxRequests: 25,
@@ -48,7 +53,7 @@ export default defineNuxtConfig({
     logger: {
       level: process.env.LOGGER_LEVEL || 'info',
       telegram: {
-        chat: process.env.LOGGER_TELEGRAM_CHAT,
+        chat: Number(process.env.LOGGER_TELEGRAM_CHAT),
       },
     },
     telegram: {
@@ -63,6 +68,9 @@ export default defineNuxtConfig({
     experimental: {
       websocket: true,
     },
+    plugins: [
+      'plugins/socket',
+    ],
     routeRules: {
       '/**/*.map': {
         headers: {
@@ -101,11 +109,11 @@ export default defineNuxtConfig({
       },
     },
   },
-  eslint: {
-    config: {
-      stylistic: true,
-    },
-  },
+  // eslint: {
+  //   config: {
+  //     stylistic: true,
+  //   },
+  // },
   robots: {
     sitemap: [
       '/sitemap.xml',

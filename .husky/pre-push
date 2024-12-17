@@ -1,1 +1,1 @@
-eslint . --fix --max-warnings=0 && npm run build
+

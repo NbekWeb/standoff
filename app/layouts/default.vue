@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 
-const enter = ref(false);
+const modal = ref("");
 
 const selected = ref(0);
 
@@ -12,8 +12,8 @@ const changeSelect = (i) => {
 
 <template>
   <div
-    class="bg-dark-100 flex flex-col relative"
-    :class="enter && 'enter-open'"
+    class="bg-dark-100 text-white flex flex-col relative"
+    :class="modal && 'enter-open'"
   >
     <div class="flex p-1 gap-1 items-center">
       <div
@@ -65,16 +65,24 @@ const changeSelect = (i) => {
         </div>
         <MainNavbar class="main-navbar" />
       </div>
-      <MainMenubar class="" @enter="() => (enter = true)" />
+      <MainMenubar class="" @enter="() => (modal = 'enter')" />
     </div>
     <div class=" ">
       <div class="mt-5">
-        <slot />
+        <NuxtPage @modal="(val) => (modal = val)" />
+
         <MainFoot />
       </div>
     </div>
     <MainMobile />
-    <MainEnter v-if="enter" @close="() => (enter = false)" />
+    <div
+      @click="() => (modal = '')"
+      v-if="modal != ''"
+      class="flex justify-center items-center h-screen w-full absolute top-0 left-0 enter-main"
+    >
+      <MainEnter @close="() => (modal = '')" v-if="modal == 'enter'" />
+      <KeysModal @close="() => (modal = '')" v-if="modal == 'promo'" />
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -127,5 +135,11 @@ const changeSelect = (i) => {
 .enter-open {
   max-height: 100vh;
   overflow-y: hidden !important;
+}
+
+.enter-main {
+  z-index: 9999;
+  background: rgba($dark-100, 0.7);
+  backdrop-filter: blur(4px);
 }
 </style>

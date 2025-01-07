@@ -1,21 +1,32 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
-const selected = ref(0);
+const router = useRouter();
+const route = useRoute();
 
-const changeSelect = (i) => {
-  selected.value = i;
+const selected = ref(route.path);
+
+const changeSelect = (path) => {
+  selected.value = path;
+  router.push(path);
 };
-</script>
 
+watch(
+  () => route.path,
+  (newPath) => {
+    selected.value = newPath;
+  }
+);
+</script>
 <template>
   <div class="mt-8 flex gap-10 text-base font-bold text-grey-900">
     <div
       class="flex flex-col gap-7 items-center point"
-      @click="changeSelect(0)"
+      @click="changeSelect('keys')"
     >
       <div
-        :class="`flex gap10 items-center ${selected == 0 && 'text-orange-500'}`"
+        :class="`flex gap10 items-center ${selected == 'keys' && 'text-orange-500'}`"
       >
         <IconKey class="text-xl" />
         <span>Кейсы</span>
@@ -79,8 +90,9 @@ const changeSelect = (i) => {
 <style lang="scss" scoped>
 @import "@/assets/scss/_colors.scss";
 
-.point ,.opacity-0{
-  transition:  .3s ease;
+.point,
+.opacity-0 {
+  transition: 0.3s ease;
 }
 
 .point:hover {

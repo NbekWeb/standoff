@@ -37,9 +37,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    class="absolute modal text-sm top-22 right-0 text-grey-900 font-semibold"
-  >
+  <div class="absolute top-22 right-0 modal text-sm text-grey-900 font-semibold">
     <div class="p-5 modal-top gap-5 flex flex-col">
       <span class=""> 01.12.2024</span>
       <span class="text-base text-orange-500 min-w-max"

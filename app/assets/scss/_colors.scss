@@ -100,6 +100,10 @@ $pink-500: #D84DDB;
   color: $blue-500;
 }
 
+.text-blue-700 {
+  color: $blue-700;
+}
+
 .text-pink-500 {
   color: $pink-500;
 }
@@ -122,6 +126,14 @@ $pink-500: #D84DDB;
 
   &:hover {
     background: rgba($orange-500, .7);
+  }
+}
+
+.btn-green {
+  background: $green-500;
+
+  &:hover {
+    background: rgba($green-500, .7);
   }
 }
 

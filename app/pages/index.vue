@@ -1,11 +1,6 @@
-<script setup lang="ts">
-
-</script>
-
+<script setup></script>
 <template>
-  <NuxtWelcome />
+  <div>
+    <HomeGiveaway />
+  </div>
 </template>
-
-<style scoped>
-
-</style>

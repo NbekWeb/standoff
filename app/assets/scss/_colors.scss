@@ -1,1 +1,135 @@
+$green-500: #5EE8AD;
+$grey-900: #9B9DB1;
+$dark-100: #12131a;
+$dark-160:#161720;
+$dark-200: #1C1D27;
+$dark-300:#272835;
+$orange-500: #FC5C3A;
+$orange-400: #DB4D4D;
+$blue-200: #27A7E7;
+$blue-500: #4D7CF6;
+$blue-600: #0077FF;
+$blue-700: #7A4DDB;
+$blue-100: #00A5D2;
+$pink-500: #D84DDB;
 
+.bg-green-500 {
+  background: $green-500;
+}
+
+.bg-grey-900 {
+  background: $grey-900;
+}
+
+.bg-dark-100 {
+  background: $dark-100;
+}
+
+.bg-dark-160 {
+  background: $dark-160;
+}
+
+.bg-dark-200 {
+  background: $dark-200;
+}
+
+.bg-dark-300 {
+  background: $dark-300;
+}
+
+
+.bg-orange-500 {
+  background: $orange-500;
+}
+
+.bg-orange-400 {
+  background: $orange-400;
+}
+
+.bg-blue-500 {
+  background: $blue-500;
+}
+
+.bg-blue-200 {
+  background: $blue-200;
+}
+
+.bg-blue-600 {
+  background: $blue-600;
+}
+
+
+.bg-blue-700 {
+  background: $blue-700;
+}
+
+
+.bg-blue-100 {
+  background: $blue-100;
+}
+
+.bg-pink-500 {
+  background: $pink-500;
+}
+
+.text-green-500 {
+  color: $green-500;
+}
+
+.text-grey-900 {
+  color: $grey-900;
+}
+
+.text-dark-100 {
+  color: $dark-100;
+}
+
+.text-dark-200 {
+  color: $dark-200;
+}
+
+.text-orange-500 {
+  color: $orange-500;
+}
+
+.text-orange-400 {
+  color: $orange-400;
+}
+
+.text-blue-500 {
+  color: $blue-500;
+}
+
+.text-pink-500 {
+  color: $pink-500;
+}
+
+.text-dark-160 {
+  color: $dark-160;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-white2 {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.btn-orange {
+  background: $orange-500;
+
+  &:hover {
+    background: rgba($orange-500, .7);
+  }
+}
+
+
+.btn-dark {
+  background: $dark-200;
+
+  &:hover {
+    background: rgba($dark-200, .7);
+  }
+}

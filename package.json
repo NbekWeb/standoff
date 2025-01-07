@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxt/eslint": "^0.6.1",
-    "@nuxt/fonts": "^0.10.2",
+    "@nuxt/fonts": "^0.10.3",
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/fontaine": "^0.4.4",
     "@nuxtjs/robots": "^4.1.11",
@@ -25,6 +25,7 @@
     "class-validator": "^0.14.1",
     "h3-zod": "^0.5.3",
     "ioredis": "^5.4.1",
+    "ipx": "^3.0.1",
     "mitt": "^3.0.1",
     "mysql2": "^3.11.4",
     "neverthrow": "^8.1.1",

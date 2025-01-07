@@ -1,0 +1,77 @@
+@import url('./_colors.scss');
+@import url('./_display.scss');
+@import url('./_opacity.scss');
+@import url('./_position.scss');
+@import url('./_radius.scss');
+@import url('./_space.scss');
+@import url('./_text.scss');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+
+
+.container {
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1580px) {
+  .container {
+    max-width: 1568px;
+  }
+}
+
+// @media screen and (max-width: 1580px) {
+  //   .container {
+  //     margin: 0 16px;
+  //   }
+  // }
+
+.point:hover {
+  cursor: pointer;
+}
+
+.bor {
+  border: 1px solid red;
+}
+
+.tr-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tr-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
+}
+
+.tr-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+.btn {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.centerX {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.centerXY {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,156 @@
+@for $i from 0 through 30 {
+  .gap-#{$i} {
+    gap: $i * 4px; // Each step increases by 4px
+  }
+
+  // Padding classes
+  .pt-#{$i} {
+    padding-top: $i * 4px;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $i * 4px;
+  }
+
+  .pl-#{$i} {
+    padding-left: $i * 4px;
+  }
+
+  .pr-#{$i} {
+    padding-right: $i * 4px;
+  }
+
+  .px-#{$i} {
+    padding-left: $i * 4px;
+    padding-right: $i * 4px;
+  }
+
+  .py-#{$i} {
+    padding-top: $i * 4px;
+    padding-bottom: $i * 4px;
+  }
+
+  .p-#{$i} {
+    padding: $i * 4px;
+  }
+
+  // Margin classes
+  .mt-#{$i} {
+    margin-top: $i * 4px;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $i * 4px;
+  }
+
+  .ml-#{$i} {
+    margin-left: $i * 4px;
+  }
+
+  .mr-#{$i} {
+    margin-right: $i * 4px;
+  }
+
+  .mx-#{$i} {
+    margin-left: $i * 4px;
+    margin-right: $i * 4px;
+  }
+
+  .my-#{$i} {
+    margin-top: $i * 4px;
+    margin-bottom: $i * 4px;
+  }
+
+  .m-#{$i} {
+    margin: $i * 4px;
+  }
+
+  // Top, right, bottom, left position classes
+  .top-#{$i} {
+    top: $i * 4px;
+  }
+
+  .bottom-#{$i} {
+    bottom: $i * 4px;
+  }
+
+  .left-#{$i} {
+    left: $i * 4px;
+  }
+
+  .right-#{$i} {
+    right: $i * 4px;
+  }
+
+  .w-#{$i} {
+    width: $i*4px;
+  }
+
+  .min-w-#{$i} {
+    min-width: $i*4px;
+  }
+
+  .h-#{$i} {
+    height: $i*4px !important;
+  }
+
+}
+
+.gap10 {
+  gap: 10px
+}
+
+.p10 {
+  padding: 10px;
+}
+
+.py10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.h50 {
+  height: 50px;
+}
+
+.w50 {
+  width: 50px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.min-w-max {
+  min-width: max-content;
+}
+
+
+.min-h-max {
+  min-height: max-content;
+}
+
+.px50 {
+  padding-right: 50px;
+  padding-left: 50px;
+}

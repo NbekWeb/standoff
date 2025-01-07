@@ -2,8 +2,6 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/test-utils/module',
-    // '@nuxt/eslint',
-    // '@nuxtjs/stylelint-module',
     'nuxt3-notifications',
     '@pinia/nuxt',
     '@nuxt/test-utils/module',
@@ -11,7 +9,19 @@ export default defineNuxtConfig({
     'nuxt-auth-utils',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@nuxt/image',
+    '@nuxt/fonts'
   ],
+  ssr: true,
+  image: {
+    provider: 'ipx', // This tells Nuxt to use IPX as the image provider
+  },
+  fonts:{
+    families:[
+      { name: 'Inter', src: '/font/Inter.otf' },
+    ],
+  },
+  
   devtools: {
     enabled: process.env.NODE_ENV === 'development',
   },
@@ -69,7 +79,7 @@ export default defineNuxtConfig({
       websocket: true,
     },
     plugins: [
-      'plugins/socket',
+      // 'plugins/socket',
     ],
     routeRules: {
       '/**/*.map': {
@@ -101,19 +111,20 @@ export default defineNuxtConfig({
   },
   vite: {
     css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern',
-          additionalData: '@use "~/assets/scss/_colors.scss" as *;',
-        },
-      },
+      // preprocessorOptions: {
+      //   scss: {
+      //     api: 'modern',
+      //     additionalData: '@use "~/assets/scss/_colors.scss" as *;',
+      //   },
+      // },
+
     },
   },
-  // eslint: {
-  //   config: {
-  //     stylistic: true,
-  //   },
-  // },
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
   robots: {
     sitemap: [
       '/sitemap.xml',

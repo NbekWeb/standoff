@@ -61,7 +61,9 @@ const changeSelect = (i) => {
     >
       <div class="flex gap-20 items-center">
         <div class="flex">
-          <NuxtImg src="/images/logo.png" height="46" />
+          <NuxtLink to="/">
+            <NuxtImg src="/images/logo.png" height="46" />
+          </NuxtLink>
         </div>
         <MainNavbar class="main-navbar" />
       </div>

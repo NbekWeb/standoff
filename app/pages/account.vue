@@ -5,7 +5,11 @@ const step = ref(0);
 const emit = defineEmits();
 
 function withdraw() {
-  emit("modal",'withdraw');
+  emit("modal", "withdraw");
+}
+
+function copyText(val) {
+  navigator.clipboard.writeText(val);
 }
 </script>
 
@@ -31,7 +35,9 @@ function withdraw() {
               class="h-14 font-semibold px-5 bg-dark-200 rounded-xs flex items-center w-full"
             >
               <span class="flex-grow flex justify-center">ID: 5674842</span>
-              <span class="text-xl item point"><IconCopy /></span>
+              <span class="text-xl item point" @click="copyText('5674842')"
+                ><IconCopy
+              /></span>
             </div>
           </div>
         </div>

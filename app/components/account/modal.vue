@@ -71,9 +71,15 @@ function close() {
       </div>
       <div class="grid-2 gap-5">
         <div class="p-1 flex flex-col rounded-xs">
-          <NuxtImg src=""/>
+          <NuxtImg src="/images/awm.png" />
         </div>
       </div>
+      <button
+        @click="close"
+        class="btn btn-green point w-full rounded-xs h-14 flex items-center justify-center font-semibold text-dark-200"
+      >
+        ГОТОВО
+      </button>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div
-      class="bg-dark-200 flex-wrap text-orange-500 font-bold text-base p-5 mt-5 flex justify-center items-center gap-20 static-wrap"
+      class="bg-dark-200 flex-wrap text-orange-500 font-bold rounded-xs text-base p-5 mt-5 flex justify-center items-center gap-20 static-wrap"
     >
       <div class="flex gap-5 items-center static-item">
         <div class="px-3 py-2 text-3xl bg-dark-300 rounded-xs">
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div
-      class="bg-dark-200 p-10 text-grey-900 text-base font-bold mt-5 flex flex-col gap-5 footer"
+      class="bg-dark-200 rounded-xs p-10 text-grey-900 text-base font-bold mt-5 flex flex-col gap-5 footer"
     >
       <div class="flex gap-20 flex-wrap">
         <div class="flex flex-col gap-5">

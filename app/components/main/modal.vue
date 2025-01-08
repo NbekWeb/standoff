@@ -1,5 +1,13 @@
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const goTo = (path) => {
+  router.push(path);
+  emit("close");
+};
 
 const emit = defineEmits();
 
@@ -20,9 +28,9 @@ const changeLang = (val) => {
 };
 
 // Close modal on click outside
-const handleClickOutside = (event: MouseEvent) => {
+const handleClickOutside = (event) => {
   const modal = document.querySelector(".change-lang");
-  if (openLang.value && modal && !modal.contains(event.target as Node)) {
+  if (openLang.value && modal && !modal.contains(event.target)) {
     openLang.value = false;
   }
 };
@@ -37,7 +45,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="absolute top-22 right-0 modal text-sm text-grey-900 font-semibold">
+  <div
+    class="absolute top-22 right-0 modal text-sm text-grey-900 font-semibold"
+  >
     <div class="p-5 modal-top gap-5 flex flex-col">
       <span class=""> 01.12.2024</span>
       <span class="text-base text-orange-500 min-w-max"
@@ -60,7 +70,7 @@ onBeforeUnmount(() => {
         <IconShare class="text-xl" />
         <span> Реферальная система </span>
       </div>
-      <div class="flex items-center gap10 point item">
+      <div @click="goTo('faq')" class="flex items-center gap10 point item">
         <IconFaq class="text-xl" />
         <span> FAQ </span>
       </div>

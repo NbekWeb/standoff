@@ -5,9 +5,13 @@ const open = ref(false);
 
 const emit = defineEmits();
 
+function withdraw() {
+  emit("modal", "withdraw");
+}
+
 function enter() {
-  emit("enter");
-  toggleOpen()
+  emit("modal", "enter");
+  toggleOpen();
 }
 
 const toggleOpen = () => {
@@ -35,6 +39,7 @@ onBeforeUnmount(() => {
   <div class="flex gap10 text-2xl relative h-14">
     <div class="p-1 bg-dark-300 flex gap-3 items-center rounded-xs">
       <div
+        @click="withdraw"
         class="bg-orange-500 rounded-xs flex h-full w-12 items-center justify-center point text-dark-200"
       >
         <IconCash />
@@ -44,7 +49,7 @@ onBeforeUnmount(() => {
           <span class="text-orange-500">0 G</span>
           <span class="text-white">0 C</span>
         </div>
-        <NuxtImg src="/images/emblema.png" class="h-full  py-1" />
+        <NuxtImg src="/images/emblema.png" class="h-full py-1" />
       </div>
     </div>
     <div
@@ -57,7 +62,12 @@ onBeforeUnmount(() => {
         <IconMenu />
       </div>
     </div>
-    <MainModal v-if="open" class="main-modal1" @enter="enter" />
+    <MainModal
+      v-if="open"
+      class="main-modal1"
+      @enter="enter"
+      @close="toggleOpen"
+    />
   </div>
 </template>
 <style scoped lang="scss"></style>

@@ -12,7 +12,7 @@ const items = [1, 2, 3, 4, 5, 10];
 </script>
 
 <template>
-  <div class="keys-main text-grey-900 text-base">
+  <div class="keys-main  text-grey-900 text-base">
     <div
       class="p-2 relative h400 w-full rounded-xs flex justify-center bg-dark-160 mt-5"
     >

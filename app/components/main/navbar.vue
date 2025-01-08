@@ -12,6 +12,8 @@ const changeSelect = (path) => {
   router.push(path);
 };
 
+
+
 watch(
   () => route.path,
   (newPath) => {
@@ -35,7 +37,7 @@ watch(
       </div>
       <span
         :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 ${
-          selected != 'keys' && 'opacity-0'
+          selected != '/keys' && 'opacity-0'
         }`"
       ></span>
     </div>

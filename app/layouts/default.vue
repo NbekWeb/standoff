@@ -67,7 +67,7 @@ const changeSelect = (i) => {
         </div>
         <MainNavbar class="main-navbar" />
       </div>
-      <MainMenubar class="" @enter="() => (modal = 'enter')" />
+      <MainMenubar class="" @modal="(val) => (modal = val)" />
     </div>
     <div class=" ">
       <div class="mt-5">

@@ -70,8 +70,20 @@ function close() {
         </div>
       </div>
       <div class="grid-2 gap-5">
-        <div class="p-1 flex flex-col rounded-xs">
+        <div
+          class="p-1 bg-orange flex flex-col rounded-xs"
+          v-for="i in 2"
+          :key="i"
+        >
           <NuxtImg src="/images/awm.png" />
+          <div class="flex relative flex-col items-center gap10">
+            <div class="flex text-xs flex-col items-center gap-0">
+              <span>AWP</span>
+              <span class="text-orange-500 -mt-1">BOOM</span>
+            </div>
+            <div class="w-25 h-1 rounded-xs bg-orange-500 flex"></div>
+            <AccountCheck :check="i % 2 != 0" />
+          </div>
         </div>
       </div>
       <button
@@ -95,6 +107,10 @@ function close() {
 
 .w-5 {
   min-width: 20px;
+}
+
+.-mt-1 {
+  margin-top: -6px;
 }
 
 .enter-content {

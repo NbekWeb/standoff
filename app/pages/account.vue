@@ -42,6 +42,7 @@ function copyText(val) {
           </div>
         </div>
         <button
+          @click="withdraw"
           class="btn h-14 flex items-center w-full btn-green text-base font-semibold text-dark-200"
         >
           ПОПОЛНИТЬ
@@ -153,7 +154,7 @@ function copyText(val) {
       </div>
     </template>
     <div
-      class="item rounded-xs bg-dark-200 flex w-full justify-center font-semibold h-14 items-center"
+      class="item point rounded-xs bg-dark-200 flex w-full justify-center font-semibold h-14 items-center"
     >
       ЗАГРУЗИТЬ ЕЩЁ
     </div>

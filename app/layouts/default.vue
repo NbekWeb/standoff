@@ -84,6 +84,7 @@ const changeSelect = (i) => {
     >
       <MainEnter @close="() => (modal = '')" v-if="modal == 'enter'" />
       <KeysModal @close="() => (modal = '')" v-if="modal == 'promo'" />
+      <AccountModal @close="() => (modal = '')" v-if="modal == 'withdraw'" />
     </div>
   </div>
 </template>

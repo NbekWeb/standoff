@@ -2,10 +2,15 @@
 import { ref } from "vue";
 
 const step = ref(0);
+const emit = defineEmits();
+
+function withdraw() {
+  emit("modal",'withdraw');
+}
 </script>
 
 <template>
-  <div class="container text-grey-900 flex flex-col gap-5">
+  <div class="container text-grey-900 flex flex-col gap-5 text-base">
     <div class="flex gap-5">
       <div class="flex flex-grow gap-5 bg-dark-160 p-5 rounded-xs flex-col">
         <div class="flex gap-5 flex-grow">
@@ -17,6 +22,7 @@ const step = ref(0);
 
           <div class="flex text-base flex-grow flex-col justify-between">
             <div
+              @click="withdraw"
               class="h-14 font-semibold bg-dark-200 rounded-xs point item flex items-center justify-center w-full"
             >
               ONELEDAY
@@ -112,11 +118,39 @@ const step = ref(0);
             </div>
             <button
               class="btn bg-dark-200 point item rounded-xs text-grey-900 font-semibold text-sm h-8 flex items-center px-4"
-            >Вывести скин</button>
+            >
+              Вывести скин
+            </button>
           </div>
         </div>
       </div>
     </template>
+    <template v-else>
+      <div class="p-5 grid-2 gap-5 rounded-xs bg-dark-200">
+        <div
+          v-for="i in 6"
+          :key="i"
+          class="rounded-xs flex justify-between items-center p-5 bg-dark-160"
+        >
+          <div class="flex items-center gap-5">
+            <NuxtImg src="/images/awm.png" class="h-5" />
+            <div class="flex flex-col">
+              <span>M16</span>
+              <span class="text-white">Winged</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-5">
+            <span class="text-white"> 4898 G </span>
+            <KeysCheck :selected="i % 2 != 0" />
+          </div>
+        </div>
+      </div>
+    </template>
+    <div
+      class="item rounded-xs bg-dark-200 flex w-full justify-center font-semibold h-14 items-center"
+    >
+      ЗАГРУЗИТЬ ЕЩЁ
+    </div>
   </div>
 </template>
 

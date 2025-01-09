@@ -49,7 +49,7 @@ onBeforeUnmount(() => {
           <span class="text-orange-500">0 G</span>
           <span class="text-white">0 C</span>
         </div>
-        <NuxtImg src="/images/emblema.png" class="h-full py-1" />
+        <NuxtImg src="/images/emblema.png" class="h-full py-1 rounded-xs" />
       </div>
     </div>
     <div

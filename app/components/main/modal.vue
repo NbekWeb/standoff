@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
         <IconUser class="text-xl" />
         <span> Личный кабинет </span>
       </div>
-      <div class="flex items-center gap10 point item">
+      <div @click="goTo('referral')" class="flex items-center gap10 point item">
         <IconShare class="text-xl" />
         <span> Реферальная система </span>
       </div>

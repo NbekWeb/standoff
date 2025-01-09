@@ -31,7 +31,7 @@
                 : 'text-blue-700'
             ">BOOM</span>
           <span
-            class="mt10 mb-1 min-w-full px-15 h-1 rounded-xs"
+            class="mt10 mb-1  px-15 h-1 rounded-xs"
             :class="
               i % 4 == 1
                 ? 'bg-orange-400'

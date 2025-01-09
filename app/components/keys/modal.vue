@@ -67,7 +67,5 @@ input::placeholder {
   font-weight: 600;
 }
 
-.point-none:hover {
-  cursor: not-allowed;
-}
+
 </style>

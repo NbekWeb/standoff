@@ -117,17 +117,8 @@ function close() {
   min-width: 488px;
   width: 488px;
 }
-input {
-  border: none;
-  outline: none;
-  background: transparent;
-}
 
-input::placeholder {
-  color: $grey-900;
-  font-size: 16px;
-  font-weight: 600;
-}
+
 
 .point-none:hover {
   cursor: not-allowed;

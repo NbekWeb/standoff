@@ -86,3 +86,14 @@ a {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+
+.point-none:hover {
+  cursor: not-allowed;
+}

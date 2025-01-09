@@ -105,7 +105,7 @@ const code = ref("");
             <div
               class="w180 flex rounded-xs gap-1 h-full bg-dark-300 flex justify-center items-center"
             >
-              <span class="text-xl flex">
+              <span class="text-xl flex text-orange-500">
                 <IconTime />
               </span>
               <span class="text-white font-semibold">18:56:54</span>
@@ -144,7 +144,7 @@ const code = ref("");
           <div
             class="flex rounded-xs gap-1 h-full bg-dark-300 flex justify-center items-center"
           >
-            <span class="text-xl flex">
+            <span class="text-xl flex text-orange-500">
               <IconTime />
             </span>
             <span class="text-white font-semibold">18:56:54</span>
@@ -155,6 +155,31 @@ const code = ref("");
             ОТКРЫТ
           </div>
         </div>
+      </div>
+    </div>
+    <div class="p-5 rounded-xs bg-dark-200 flex flex-col gap-5">
+      <div class="flex justify-between items-center">
+        <div class="flex flex-col gap10 font-semibold">
+          <span class="text-white">YOUTUBE</span>
+          <span class="text-orange-500">БЕСПЛАТНЫЙ КЕЙС</span>
+        </div>
+        <div
+          class="w-12 text-28 text-dark-200 btn btn-orange rounded-xs h-12 flex items-center justify-center"
+        >
+          <IconKey />
+        </div>
+      </div>
+
+      <div class="flex gap-5 items-center">
+        <span class="flex rounded-xs w-1 h-5 bg-orange-500"></span>
+        <span>ОТКРЫВАЙ БЕСПЛАТНО КАЖДЫЕ 24 ЧАСА</span>
+      </div>
+      <div class="flex h-14 justify-end">
+        <button
+          class="h-full px-9 text-base font-semibold btn btn-orange flex justify-center items-center text-dark-200 rounded-xs"
+        >
+          ОТКРЫТ
+        </button>
       </div>
     </div>
   </div>

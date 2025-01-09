@@ -95,11 +95,11 @@ const code = ref("");
         <div class="flex justify-between items-end">
           <div class="flex flex-col gap10">
             <span>СЕГОДНЯ:</span>
-            <div
-              class="text-dark-300 font-semibold h-14 px-10 flex items-center bg-orange-400 rounded-xs"
+            <button
+              class="text-dark-300 btn font-semibold h-14 px-10 flex items-center bg-orange-400 rounded-xs"
             >
               8888G
-            </div>
+            </button>
           </div>
           <div class="flex gap-5 h-14">
             <div
@@ -110,11 +110,11 @@ const code = ref("");
               </span>
               <span class="text-white font-semibold">18:56:54</span>
             </div>
-            <div
-              class="w180 h-full font-semibold bg-orange-400 flex justify-center items-center text-dark-200 rounded-xs"
+            <button
+              class="w180 btn h-full font-semibold bg-orange-400 flex justify-center items-center text-dark-200 rounded-xs"
             >
               УЧАСТВОВАТЬ
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -149,11 +149,11 @@ const code = ref("");
             </span>
             <span class="text-white font-semibold">18:56:54</span>
           </div>
-          <div
-            class="h-full font-semibold bg-orange-500 flex justify-center items-center text-dark-200 rounded-xs"
+          <button
+            class="h-full btn font-semibold btn-orange flex justify-center items-center text-dark-200 rounded-xs"
           >
             ОТКРЫТ
-          </div>
+          </button>
         </div>
       </div>
     </div>

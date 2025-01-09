@@ -66,7 +66,7 @@ function copyText(val) {
               v-model="promoCode"
               type="text"
               placeholder="ПРОМОКОД"
-              class="text-base font-semibold"
+              class="text-base font-medium"
               :class="isReadonly ? 'text-grey-900' : 'text-white'"
               :readonly="isReadonly"
             />
@@ -171,13 +171,7 @@ function copyText(val) {
   height: 132px;
 }
 
-.w190 {
-  width: 190px;
-}
 
-.w180 {
-  width: 180px;
-}
 
 .item {
   transition: 0.3s ease;

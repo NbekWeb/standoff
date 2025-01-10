@@ -47,14 +47,14 @@ onBeforeUnmount(() => {
       @enter="enter"
       @close="openModal"
     />
-    <div class="flex gap-6 items-center">
+    <div class="flex gap-20 items-center">
       <div
         class="flex flex-col gap-2 items-center point"
-        @click="changeSelect( '/keys')"
+        @click="changeSelect('/keys')"
       >
         <div
           :class="`flex gap-2 flex-col  items-center ${
-            selected ==  '/keys' && 'text-orange-500'
+            selected == '/keys' && 'text-orange-500'
           }`"
         >
           <IconKey class="text-xl" />
@@ -62,7 +62,7 @@ onBeforeUnmount(() => {
         </div>
         <span
           :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 ${
-            selected !=  '/keys' && 'opacity-0'
+            selected != '/keys' && 'opacity-0'
           }`"
         ></span>
       </div>
@@ -85,7 +85,7 @@ onBeforeUnmount(() => {
         ></span>
       </div>
     </div>
-    <div class="flex gap-6 items-center">
+    <div class="flex gap-20 items-center">
       <div
         class="flex flex-col gap-2 items-center item point"
         @click="changeSelect('/game')"
@@ -148,9 +148,21 @@ onBeforeUnmount(() => {
   display: none;
 }
 
-@media screen and (max-width: 1176px) {
+@media screen and (max-width: 1024px) {
   .mobile {
     display: flex;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .gap-20 {
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gap-20 {
+    gap: 25px;
   }
 }
 

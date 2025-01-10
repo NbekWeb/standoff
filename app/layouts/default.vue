@@ -66,7 +66,7 @@ const changeSelect = (i) => {
             <NuxtImg src="/images/logo.png" class="logo" />
           </NuxtLink>
         </div>
-        <MainNavbar class="main-navbar flex-grow" />
+        <MainNavbar class="main-navbar flex-grow " />
       </div>
       <MainMenubar class="" @modal="(val) => (modal = val)" />
     </div>
@@ -115,7 +115,7 @@ const changeSelect = (i) => {
   }
 }
 
-@media screen and (max-width: 1176px) {
+@media screen and (max-width: 1024px) {
   .mainMenu {
     padding: 0 16px;
     .main-navbar {

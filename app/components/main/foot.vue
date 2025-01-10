@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div
-      class="bg-dark-200 flex-wrap text-orange-500 font-bold rounded-xs text-base p-5 mt-5 flex justify-center items-center gap-20 static-wrap"
+      class="bg-dark-200 flex-wrap footer text-orange-500 font-bold rounded-xs text-base p-5 mt-5 flex justify-center items-center gap-20 static-wrap"
     >
       <div class="flex gap-5 items-center static-item">
         <div class="px-3 py-2 text-3xl bg-dark-300 rounded-xs">
@@ -42,12 +42,15 @@
       </div>
     </div>
     <div
-      class="bg-dark-200 rounded-xs p-10 text-grey-900 text-base font-bold mt-5 flex flex-col gap-5 footer"
+      class="bg-dark-200 pb-132 rounded-xs p-10 text-grey-900 text-base font-bold mt-5 flex flex-col gap-5 footer"
     >
       <div class="flex gap-20 flex-wrap">
         <div class="flex flex-col gap-5">
           <span>COPYRIGHT © STANDOFFHUB.COM 2020 - 2024</span>
-          <a href="mailto:SUPPORT@STANDOFFHUB.COM" class="icon point text-grey-900">
+          <a
+            href="mailto:SUPPORT@STANDOFFHUB.COM"
+            class="icon point text-grey-900"
+          >
             SUPPORT@STANDOFFHUB.COM</a
           >
         </div>
@@ -84,5 +87,37 @@
 <style lang="scss">
 .icon:hover {
   color: #fff;
+}
+@media screen and (max-width: 1176px) {
+
+
+  .footer {
+    flex-wrap: wrap-reverse;
+    padding: 20px;
+    .gap-20 {
+      gap: 20px;
+    }
+
+    .flex.gap-4.text-xl {
+      order: -1;
+    }
+  }
+  .static-wrap {
+    gap: 10px;
+    justify-content: space-between;
+    font-size: 12px;
+    .px-3 {
+      padding: 8px;
+    }
+    .text-xl {
+      font-size: 14px;
+    }
+    .static-item {
+      gap: 8px;
+    }
+  }
+  .pb-132 {
+    padding-bottom: 132px;
+  }
 }
 </style>

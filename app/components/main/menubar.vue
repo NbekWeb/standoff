@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from "vue";
-
+<script setup>
 const open = ref(false);
 
 const emit = defineEmits();
@@ -18,10 +16,9 @@ const toggleOpen = () => {
   open.value = !open.value;
 };
 
-// Close modal on click outside
-const handleClickOutside = (event: MouseEvent) => {
+const handleClickOutside = (event) => {
   const modal = document.querySelector(".main-modal1");
-  if (open.value && modal && !modal.contains(event.target as Node)) {
+  if (open.value && modal && !modal.contains(event.target)) {
     open.value = false;
   }
 };
@@ -54,7 +51,7 @@ onBeforeUnmount(() => {
     </div>
     <div
       @click.stop="toggleOpen"
-      class="p-1 bg-dark-300 point flex gap-3 items-center rounded-xs"
+      class="p-1 bg-dark-300 point flex gap-3 items-center rounded-xs icon-menu"
     >
       <div
         class="bg-orange-500 rounded-xs flex h-12 w-12 items-center justify-center point text-dark-200"
@@ -70,4 +67,16 @@ onBeforeUnmount(() => {
     />
   </div>
 </template>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@media screen and (max-width: 1176px) {
+  .icon-menu {
+    display: none;
+  }
+  .gap-3{
+    gap:8px;
+  }
+  .ml-8{
+    margin-left: 10px;
+  }
+}
+</style>

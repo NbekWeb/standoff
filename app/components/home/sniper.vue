@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 <template>
   <div
-    :class="`rounded-xs flex p10 flex-col justify-between ${
+    :class="`rounded-xs flex p10 flex-col justify-between min-w-full ${
       type == 0 ? 'bg-pink-30' : type == 1 ? 'bg-orange-30' : 'bg-blue-30'
     }`"
   >
@@ -74,7 +74,7 @@ const props = defineProps({
         <IconTime
           :class="`${
             type == 0
-              ? 'text--pink-500'
+              ? 'text-pink-500'
               : type == 1
               ? 'text-orange-400'
               : 'text-blue-500'

@@ -2,17 +2,48 @@
 import { ref } from "vue";
 
 const selected = ref(0);
+const open = ref(false);
 
 const changeSelect = (i) => {
   selected.value = i;
 };
+
+function openModal() {
+  open.value = !open.value;
+}
+
+const handleClickOutside = (event) => {
+  const modal = document.querySelector(".main-modal1");
+  if (open.value && modal && !modal.contains(event.target)) {
+    open.value = false;
+  }
+};
+const emit = defineEmits();
+
+function enter() {
+  emit("modal", "enter");
+  openModal();
+}
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
 </script>
 
 <template>
   <div
-    class="w-full text-xs  mobile px-7 pt-5  items-end justify-between text-grey-900"
+    class="w-full text-xs mobile px-7 pt-5 items-end justify-between text-grey-900"
   >
-    <div class="flex gap-10 items-center">
+    <MainModal
+      v-if="open"
+      class="main-modal1"
+      @enter="enter"
+      @close="openModal"
+    />
+    <div class="flex gap-6 items-center">
       <div
         class="flex flex-col gap-2 items-center point"
         @click="changeSelect(0)"
@@ -50,7 +81,7 @@ const changeSelect = (i) => {
         ></span>
       </div>
     </div>
-    <div class="flex gap-10 items-center">
+    <div class="flex gap-6 items-center">
       <div
         class="flex flex-col gap-2 items-center item point"
         @click="changeSelect(2)"
@@ -61,7 +92,7 @@ const changeSelect = (i) => {
           }`"
         >
           <IconGame class="text-xl" />
-          <span>Игры</span>
+          <span>Игры </span>
         </div>
         <span
           :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 ${
@@ -70,31 +101,27 @@ const changeSelect = (i) => {
         ></span>
       </div>
       <div
-        class="flex flex-col gap-2 items-center item point"
-        @click="changeSelect(3)"
+        class="flex  flex-col gap-2 items-center item point"
+        @click.stop="openModal()"
       >
-        <div
-          :class="`flex gap-2 flex-col  items-center ${
-            selected == 3 && 'text-orange-500'
-          }`"
-        >
+        <div :class="`flex gap-2 flex-col  items-center `">
           <IconMenu class="text-xl" />
           <span>Меню</span>
         </div>
         <span
-          :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 ${
-            selected != 3 && 'opacity-0'
-          }`"
+          :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 opacity-0 `"
         ></span>
       </div>
     </div>
-    <div class="absolute top-0  centerX h-full pb-3">
+    <div class="absolute top-0 centerX h-full pb-3">
       <div class="h-full flex items-end">
         <div class="text-green-500 relative point">
           <div
-            class="absolute centerX   cash rounded-full flex items-center justify-center"
+            class="absolute centerX cash rounded-full flex items-center justify-center"
           >
-            <div class="flex bg-green-500  rounded-full items-center justify-center">
+            <div
+              class="flex bg-green-500 rounded-full items-center justify-center"
+            >
               <IconCash class="text-dark-200 text-3xl" />
             </div>
           </div>
@@ -108,17 +135,18 @@ const changeSelect = (i) => {
 @import "@/assets/scss/_colors.scss";
 
 .mobile {
-  position: sticky;
+  position: fixed;
   height: 72px;
-  bottom: 0;
+  top: calc(100vh - 72px);
   backdrop-filter: blur(14px);
   background: rgba($dark-200, 0.7);
-  display:none;
+  z-index: 9999;
+  display: none;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1176px) {
   .mobile {
-    display:flex;
+    display: flex;
   }
 }
 
@@ -135,8 +163,9 @@ const changeSelect = (i) => {
   }
 }
 
-.item ,.opacity-0{
-  transition:  .3s ease;
+.item,
+.opacity-0 {
+  transition: 0.3s ease;
 }
 
 .item:hover {

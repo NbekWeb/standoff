@@ -46,7 +46,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="absolute top-22 right-0 modal text-sm text-grey-900 font-semibold"
+    class="absolute flex flex-col gap-0 top-22 right-0 modal text-sm text-grey-900 font-semibold"
   >
     <div class="p-5 modal-top gap-5 flex flex-col">
       <span class=""> 01.12.2024</span>
@@ -62,7 +62,7 @@ onBeforeUnmount(() => {
       </button>
     </div>
     <div class="p-5 modal-bottom text-base bg-dark-200 gap-5 flex flex-col">
-      <div class="flex items-center gap10 point item">
+      <div @click="goTo('account')" class="flex items-center gap10 point item">
         <IconUser class="text-xl" />
         <span> Личный кабинет </span>
       </div>
@@ -118,11 +118,14 @@ onBeforeUnmount(() => {
 
 .modal {
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.3);
+  z-index:999;
+  position: absolute;
 }
 
 .modal-top {
   backdrop-filter: blur(14px);
   border-radius: 4px 4px 0 0;
+
   background: rgba($dark-200, 0.8);
 }
 
@@ -136,5 +139,25 @@ onBeforeUnmount(() => {
 .change-lang {
   background: rgba($dark-300, 0.8);
   backdrop-filter: blur(14px);
+}
+@media screen and (max-width: 1176px) {
+  .top-22 {
+    top: calc(-540px);
+  }
+  .modal {
+    width: 300px;
+  }
+  .right-0 {
+    right: 16px;
+  }
+  .min-w-max {
+    min-width: auto;
+  }
+  .p-5 {
+    padding: 16px;
+  }
+  .modal-top {
+    background: rgba($dark-200, 0.95);
+  }
 }
 </style>

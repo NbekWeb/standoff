@@ -15,6 +15,7 @@ const changeSelect = (i) => {
     class="bg-dark-100 text-white flex flex-col relative"
     :class="modal && 'enter-open'"
   >
+    <MainMobile @modal="(val) => (modal = val)" />
     <div class="flex p-1 gap-1 items-center">
       <div
         class="flex flex-col gap10 justify-end items-center min-w-18 p-1 rounded-xs h-26 bg-dark-200 relative"
@@ -62,7 +63,7 @@ const changeSelect = (i) => {
       <div class="flex gap-20 items-center">
         <div class="flex">
           <NuxtLink to="/">
-            <NuxtImg src="/images/logo.png" height="46" />
+            <NuxtImg src="/images/logo.png" class="logo" />
           </NuxtLink>
         </div>
         <MainNavbar class="main-navbar" />
@@ -76,7 +77,7 @@ const changeSelect = (i) => {
         <MainFoot />
       </div>
     </div>
-    <MainMobile />
+
     <div
       @click="() => (modal = '')"
       v-if="modal != ''"
@@ -94,45 +95,25 @@ const changeSelect = (i) => {
 .mainMenu {
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .min-h-screen {
   min-height: 200vh;
 }
 
-@media screen and (max-width: 1024px) {
+.logo {
+  height: 46px;
+}
+
+@media screen and (max-width: 1176px) {
   .mainMenu {
     padding: 0 16px;
     .main-navbar {
       display: none;
     }
   }
-  .footer {
-    flex-wrap: wrap-reverse;
-    padding: 20px;
-    .gap-20 {
-      gap: 20px;
-    }
 
-    .flex.gap-4.text-xl {
-      order: -1;
-    }
-  }
-  .static-wrap {
-    gap: 10px;
-    justify-content: space-between;
-    font-size: 12px;
-    .px-3 {
-      padding: 8px;
-    }
-    .text-xl {
-      font-size: 14px;
-    }
-    .static-item {
-      gap: 8px;
-    }
-  }
 }
 
 .enter-open {
@@ -141,8 +122,18 @@ const changeSelect = (i) => {
 }
 
 .enter-main {
-  z-index: 9999;
+  z-index: 999;
   background: rgba($dark-100, 0.7);
   backdrop-filter: blur(4px);
+}
+
+@media screen and (max-width: 640px) {
+  .px-14 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .logo {
+    height: 40px;
+  }
 }
 </style>

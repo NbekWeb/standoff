@@ -5,7 +5,7 @@ function promo() {
   emit("modal", "promo");
 }
 
-const type = ref(10);
+const type = ref(1);
 
 const opened = ref(false);
 </script>
@@ -13,7 +13,7 @@ const opened = ref(false);
 <template>
   <div class="container flex flex-col gap-5">
     <KeysHead @promo="promo" />
-    <KeysMain v-if="opened" @open="(i) => ((type = i), (opened = true))" />
+    <KeysMain v-if="!opened" @open="(i) => ((type = i), (opened = true))" />
     <OpenCaseSlide v-else :type="type" />
     <KeysGroup />
   </div>

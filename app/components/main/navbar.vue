@@ -12,8 +12,6 @@ const changeSelect = (path) => {
   router.push(path);
 };
 
-
-
 watch(
   () => route.path,
   (newPath) => {
@@ -110,4 +108,13 @@ watch(
     }
   }
 }
+@media screen and (max-width: 1280px) {
+  .gap10 {
+    gap: 4px;
+  }
+  .gap-10 {
+    gap: 10px;
+  }
+}
+
 </style>

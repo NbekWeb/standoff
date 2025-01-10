@@ -1,13 +1,17 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
-const selected = ref(0);
+const router = useRouter();
+const route = useRoute();
+
+const selected = ref(route.path);
 const open = ref(false);
 
-const changeSelect = (i) => {
-  selected.value = i;
+const changeSelect = (path) => {
+  selected.value = path;
+  router.push(path);
 };
-
 function openModal() {
   open.value = !open.value;
 }
@@ -46,11 +50,11 @@ onBeforeUnmount(() => {
     <div class="flex gap-6 items-center">
       <div
         class="flex flex-col gap-2 items-center point"
-        @click="changeSelect(0)"
+        @click="changeSelect( '/keys')"
       >
         <div
           :class="`flex gap-2 flex-col  items-center ${
-            selected == 0 && 'text-orange-500'
+            selected ==  '/keys' && 'text-orange-500'
           }`"
         >
           <IconKey class="text-xl" />
@@ -58,17 +62,17 @@ onBeforeUnmount(() => {
         </div>
         <span
           :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 ${
-            selected != 0 && 'opacity-0'
+            selected !=  '/keys' && 'opacity-0'
           }`"
         ></span>
       </div>
       <div
         class="flex flex-col gap-2 items-center item point"
-        @click="changeSelect(1)"
+        @click="changeSelect('/baraban')"
       >
         <div
           :class="`flex gap-2 flex-col  items-center ${
-            selected == 1 && 'text-orange-500'
+            selected == '/baraban' && 'text-orange-500'
           }`"
         >
           <IconBaraban class="text-xl" />
@@ -76,7 +80,7 @@ onBeforeUnmount(() => {
         </div>
         <span
           :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 ${
-            selected != 1 && 'opacity-0'
+            selected != '/baraban' && 'opacity-0'
           }`"
         ></span>
       </div>
@@ -84,11 +88,11 @@ onBeforeUnmount(() => {
     <div class="flex gap-6 items-center">
       <div
         class="flex flex-col gap-2 items-center item point"
-        @click="changeSelect(2)"
+        @click="changeSelect('/game')"
       >
         <div
           :class="`flex gap-2 flex-col  items-center ${
-            selected == 2 && 'text-orange-500'
+            selected == '/game' && 'text-orange-500'
           }`"
         >
           <IconGame class="text-xl" />
@@ -96,12 +100,12 @@ onBeforeUnmount(() => {
         </div>
         <span
           :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 ${
-            selected != 2 && 'opacity-0'
+            selected != '/game' && 'opacity-0'
           }`"
         ></span>
       </div>
       <div
-        class="flex  flex-col gap-2 items-center item point"
+        class="flex flex-col gap-2 items-center item point"
         @click.stop="openModal()"
       >
         <div :class="`flex gap-2 flex-col  items-center `">

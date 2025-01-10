@@ -68,7 +68,6 @@ function againTry() {
       >БАРАБАН ПРОМОКОДОВ</span
     >
     <div :class="`spin-wrap  relative ${step != 1 && 'res-spin'}`">
-      <div class="mob-filter"></div>
       <div class="baraban-spin relative">
         <div
           :class="`main-spin rounded-full p-6 relative flex items-center justify-center ${
@@ -159,7 +158,7 @@ function againTry() {
 }
 .main-spin {
   position: absolute;
-  z-index: 100;
+  z-index: 10;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -215,7 +214,7 @@ function againTry() {
 }
 
 .z-10 {
-  z-index: 1000;
+  z-index: 100;
 }
 .step2 {
   position: absolute;
@@ -251,17 +250,5 @@ function againTry() {
   }
 }
 @media screen and (max-width: 768px) {
-  .mob-filter {
-  background: #12131a;
-  filter: blur(15px);
-  position: absolute;
-  bottom: -10px;
-  z-index: 1000;
-  min-height: 100px;
-  height: 100px;
-  display: flex;
-  min-width: 100%;
-  }
-
 }
 </style>

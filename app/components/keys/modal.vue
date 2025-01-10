@@ -13,7 +13,7 @@ function close() {
 <template>
   <div
     @click.stop
-    class="relative text-grey-900 enter-content bg-dark-200 rounded-xs p-6"
+    class="relative text-grey-900 main-modal-content bg-dark-200 rounded-xs p-6"
   >
     <div class="font-semibold text-xl flex justify-center">Промокод</div>
     <span @click="close" class="text-2xl absolute top-5 right-5 point">
@@ -51,10 +51,7 @@ function close() {
 <style lang="scss" scoped>
 @import "@/assets/scss/_colors.scss";
 
-.enter-content {
-  min-width: 488px;
-  width: 488px;
-}
+
 input {
   border: none;
   outline: none;

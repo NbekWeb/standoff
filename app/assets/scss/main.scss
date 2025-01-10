@@ -124,3 +124,17 @@ input {
 .z-1 {
   z-index: 1;
 }
+
+
+.main-modal-content {
+  min-width: 488px;
+  width: 488px;
+  z-index: 999;
+}
+
+@media screen and (max-width: 640px) {
+  .main-modal-content {
+    min-width: calc(100% - 32px);
+    width: calc(100% - 32px);
+  }
+}

@@ -58,15 +58,15 @@ const changeSelect = (i) => {
     </div>
 
     <div
-      class="px-14 bg-dark-200 flex justify-between items-center mainMenu w-full h-20 items-center"
+      class="px-14 bg-dark-200 flex justify-between gap-5 items-center mainMenu w-full h-20 items-center"
     >
-      <div class="flex gap-20 items-center">
+      <div class="flex gap-20 items-center flex-grow">
         <div class="flex">
           <NuxtLink to="/">
             <NuxtImg src="/images/logo.png" class="logo" />
           </NuxtLink>
         </div>
-        <MainNavbar class="main-navbar" />
+        <MainNavbar class="main-navbar flex-grow" />
       </div>
       <MainMenubar class="" @modal="(val) => (modal = val)" />
     </div>
@@ -105,6 +105,15 @@ const changeSelect = (i) => {
 .logo {
   height: 46px;
 }
+@media screen and (max-width: 1580px) {
+  .gap-20 {
+    gap: 40px;
+  }
+  .px-14 {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
 
 @media screen and (max-width: 1176px) {
   .mainMenu {
@@ -113,7 +122,6 @@ const changeSelect = (i) => {
       display: none;
     }
   }
-
 }
 
 .enter-open {

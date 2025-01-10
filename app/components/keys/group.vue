@@ -5,7 +5,7 @@
     </div>
     <div class="grid-6 gap-5">
       <div
-        class="rounded-xs "
+        class="rounded-xs"
         :class="
           i % 4 == 1
             ? 'bg-orange'
@@ -21,7 +21,9 @@
         <NuxtImg src="/images/awm.png" class="w-full mt-5 px10" />
         <div class="flex flex-col items-center">
           <span>AWP</span>
-          <span class="mt-1"  :class="
+          <span
+            class="mt-1"
+            :class="
               i % 4 == 1
                 ? 'text-orange-400'
                 : i % 4 == 2
@@ -29,9 +31,11 @@
                 : i % 4 == 3
                 ? 'text-pink-500'
                 : 'text-blue-700'
-            ">BOOM</span>
+            "
+            >BOOM</span
+          >
           <span
-            class="mt10 mb-1  px-15 h-1 rounded-xs"
+            class="mt10 mb-1 px-15 h-1 rounded-xs"
             :class="
               i % 4 == 1
                 ? 'bg-orange-400'
@@ -61,5 +65,26 @@
 }
 .bg-blue2 {
   background: rgba($blue-700, 0.3);
+}
+
+@media screen and (max-width: 1024px) {
+  .mb-5 {
+    margin-bottom: 10px;
+  }
+  .p-5 {
+    padding: 10px;
+  }
+  .gap-5 {
+    gap: 10px;
+  }
+  .grid-6 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 640px){
+  .grid-6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 </style>

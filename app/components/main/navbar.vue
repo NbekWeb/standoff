@@ -41,11 +41,11 @@ watch(
     </div>
     <div
       class="flex flex-col gap-7 items-center point"
-      @click="changeSelect('/baraban')"
+      @click="changeSelect('/game')"
     >
       <div
         :class="`flex gap10 items-center ${
-          selected == '/baraban' && 'text-orange-500'
+          selected == '/game' && 'text-orange-500'
         }`"
       >
         <IconGame class="text-xl" />
@@ -53,7 +53,7 @@ watch(
       </div>
       <span
         :class="`min-w-10 h-1 rounded-t-xs bg-orange-500 ${
-          selected != '/baraban' && 'opacity-0'
+          selected != '/game' && 'opacity-0'
         }`"
       ></span>
     </div>
@@ -108,13 +108,13 @@ watch(
     }
   }
 }
+
 @media screen and (max-width: 1280px) {
   .gap10 {
     gap: 4px;
   }
   .gap-10 {
-    gap: 10px;
+    gap: 20px;
   }
 }
-
 </style>

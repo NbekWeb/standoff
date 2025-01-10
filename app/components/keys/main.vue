@@ -24,7 +24,7 @@ const items = [1, 2, 3, 4, 5, 10];
     >
       <NuxtImg src="/images/key1.png" class="h-full" />
       <div
-        class="rounded-xs absolute bottom-3 centerX flex flex-col gap-1 items-center font-semibold not-money px-15 py-7"
+        class="rounded-xs absolute bottom-3 centerX flex flex-col gap-1 items-center font-semibold not-money px-15 py-7 "
         v-show="step % 3 != 0"
       >
         <template v-if="step % 3 == 1">
@@ -41,8 +41,8 @@ const items = [1, 2, 3, 4, 5, 10];
         </template>
       </div>
     </div>
-    <div class="mt-7 grid-3 items-center gap-5">
-      <div class="flex justify-start items-center">
+    <div class="mt-7 grid-3 items-center gap-5" :class="step % 3 == 2 && 'po'">
+      <div class="flex justify-start col-span-2 items-center">
         <div class="flex gap05 font-semibold" v-show="step % 3 != 2">
           <div
             class="flex point item items-center justify-center w-19 h-14 bg-dark-200"
@@ -59,7 +59,7 @@ const items = [1, 2, 3, 4, 5, 10];
           </div>
         </div>
       </div>
-      <div class="flex justify-center items-">
+      <div class="flex justify-center items-center toX">
         <button
           @click="() => step++"
           class="btn px-15 text-dark-200 font-bold"
@@ -111,6 +111,55 @@ const items = [1, 2, 3, 4, 5, 10];
   .not-money {
     background: rgba($dark-300, 0.5);
     backdrop-filter: blur(20px);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .keys-main {
+    .h400 {
+      height: 350px;
+    }
+    button {
+      width: 100%;
+    }
+    .px-15,
+    .px-25 {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .w-19 {
+      width: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    .toX {
+      justify-content: start;
+    }
+  }
+  .po.grid-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    .toX,
+    .btn-orange {
+      width: 100%;
+    }
+  }
+  .mt-7 {
+    margin-top: 16px;
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .not-money {
+    .px-15 {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    width: 100%;
   }
 }
 </style>

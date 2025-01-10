@@ -108,40 +108,19 @@ input {
   transform: rotate(90deg);
 }
 
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+
 .-rotate-90 {
   transform: rotate(-90deg);
 }
 
-.horizontal .swiper {
-  position: static !important;
+.z-2 {
+  z-index: 2;
 }
 
-.horizontal .swiper-pagination-fraction,
-.horizontal .swiper-pagination-custom,
-.horizontal .swiper-horizontal>.swiper-pagination-bullets,
-.horizontal .swiper-pagination-bullets.swiper-pagination-horizontal {
-  position: absolute;
-  bottom: -40px !important;
-}
-
-.swiper-pagination-bullet {
-  background: #FC5C3A !important;
-  width: 12px !important;
-  height: 12px !important;
-}
-
-
-.swiper-pagination-bullet-active {
-  width: 16px !important;
-  height: 16px !important;
-}
-
-.swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
-.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-  width: 20px !important;
-}
-
-.swiper-vertical>.swiper-pagination-bullets,
-.swiper-pagination-vertical.swiper-pagination-bullets {
-  right: 10px;
+.z-1 {
+  z-index: 1;
 }

@@ -3,14 +3,18 @@ const emit = defineEmits();
 
 function promo() {
   emit("modal", "promo");
-  console.log("sa2");
 }
+
+const type = ref(1);
+
+const opened = ref(false);
 </script>
 
 <template>
-  <div class="container">
+  <div class="container flex flex-col gap-5">
     <KeysHead @promo="promo" />
-    <KeysMain />
+    <KeysMain v-if="!opened" @open="(i) => ((type = i), (opened = true))" />
+    <OpenCaseSlide v-else :type="type" />
     <KeysGroup />
   </div>
 </template>

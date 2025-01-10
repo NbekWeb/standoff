@@ -8,11 +8,17 @@ const changeSelect = (val) => {
   selected.value = val;
 };
 
+const emit = defineEmits();
+
+function open() {
+  emit("open", selected);
+}
+
 const items = [1, 2, 3, 4, 5, 10];
 </script>
 
 <template>
-  <div class="keys-main  text-grey-900 text-base">
+  <div class="keys-main text-grey-900 text-base">
     <div
       class="p-2 relative h400 w-full rounded-xs flex justify-center bg-dark-160 mt-5"
     >
@@ -54,7 +60,6 @@ const items = [1, 2, 3, 4, 5, 10];
         </div>
       </div>
       <div class="flex justify-center items-">
-
         <button
           @click="() => step++"
           class="btn px-15 text-dark-200 font-bold"
@@ -70,8 +75,8 @@ const items = [1, 2, 3, 4, 5, 10];
         </button>
       </div>
       <div class="flex justify-end items-center">
-
         <button
+          @click="open"
           class="btn btn-white font-semibold text-grey-900 item bg-dark-200 px-25 h-14 flex items-center gap10 text-grey-900 rounded-xs"
           v-show="step % 3 != 2"
         >

@@ -10,13 +10,14 @@ const props = defineProps({
   },
 });
 </script>
+
 <template>
-  <div class="rounded-xs  bg-dark-160">
+  <div class="rounded-xs point bg-dark-160 hover-parent">
     <div class="p10">
-      <NuxtImg :src="img" class="w-full" />
+      <NuxtImg :src="img" class="w-full hover-img" />
     </div>
     <div class="flex flex-col items-center gap10 mt-2">
-      <span class="text-white font-semibold"> AWP </span>
+      <span class="text-white font-semibold">AWP</span>
       <button
         class="btn rounded-xs h-10 flex items-center px-5 font-semibold text-dark-160 text-base"
         :class="
@@ -31,7 +32,7 @@ const props = defineProps({
       >
         888 G
       </button>
-      <div class="flex px50 w-full mt-5">
+      <div class="flex w-full mt-5 px50">
         <span
           class="flex border-b"
           :class="
@@ -51,6 +52,24 @@ const props = defineProps({
 
 <style scoped lang="scss">
 @import "@/assets/scss/_colors.scss";
+
+.hover-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-parent:hover .hover-img {
+  transform: scale(1.1);
+}
+
+.hover-parent .hover-img {
+  transition: transform 0.3s ease;
+}
+
+.hover-parent:hover .px50 {
+  padding: 0 25px;
+  transition: padding 0.3s ease;
+}
 
 .border-b {
   min-width: 100%;

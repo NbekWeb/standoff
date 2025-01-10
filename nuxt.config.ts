@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       { name: 'Inter', src: '/font/Inter.otf' },
     ],
   },
-  
+
   devtools: {
     enabled: process.env.NODE_ENV === 'development',
   },

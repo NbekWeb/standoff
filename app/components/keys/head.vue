@@ -10,7 +10,7 @@ function promo() {
 <template>
   <div class="flex text-white items-center justify-between">
     <button
-      class="btn btn-white font-semibold text-base bg-dark-200 px-10 h-14 flex items-center gap10 text-grey-900 rounded-xs"
+      class="btn item btn-white font-semibold text-base bg-dark-200 px-10 h-14 flex items-center gap10 text-grey-900 rounded-xs"
     >
       <IconChevron class="text-xl" />
       <span>НАЗАД</span>

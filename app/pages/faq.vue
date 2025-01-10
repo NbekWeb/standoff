@@ -36,18 +36,18 @@
     display: none;
   }
   .my-5 {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .mt-5 {
-    margin-top: 16px;
+    margin-top: 10px;
   }
   .gap-5 {
-    gap: 16px;
+    gap: 10px;
   }
   .py-5{
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 </style>

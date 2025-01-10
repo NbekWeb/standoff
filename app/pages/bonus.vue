@@ -6,7 +6,7 @@ const code = ref("");
 <template>
   <div class="container flex flex-col gap-5 text-grey-900 text-base">
     <h2 class="text-xl font-semibold text-center text-white">ВСЕ БОНУСЫ</h2>
-    <div class="grid-2 gap-5">
+    <div class="grid-2 gap-5 item-1">
       <div class="rounded-xs bg-dark-200 p-5 flex flex-col gap-5">
         <div class="flex items-center justify-between">
           <div class="flex gap10 font-semibold flex-col">
@@ -92,7 +92,7 @@ const code = ref("");
             </div>
           </div>
         </div>
-        <div class="flex justify-between items-end">
+        <div class="flex justify-between items-end flex-grow">
           <div class="flex flex-col gap10">
             <span>СЕГОДНЯ:</span>
             <button
@@ -108,7 +108,7 @@ const code = ref("");
               <span class="text-xl flex text-orange-500">
                 <IconTime />
               </span>
-              <span class="text-white font-semibold">18:56:54</span>
+              <span class="text-white font-medium">18:56:54</span>
             </div>
             <button
               class="w180 btn h-full font-semibold bg-orange-400 flex justify-center items-center text-dark-200 rounded-xs"
@@ -147,7 +147,7 @@ const code = ref("");
             <span class="text-xl flex text-orange-500">
               <IconTime />
             </span>
-            <span class="text-white font-semibold">18:56:54</span>
+            <span class="text-white font-medium">18:56:54</span>
           </div>
           <button
             class="h-full btn font-semibold btn-orange flex justify-center items-center text-dark-200 rounded-xs"
@@ -190,5 +190,37 @@ const code = ref("");
 .w-1 {
   min-width: 4px;
   width: 4px;
+}
+
+@media screen and (max-width: 1176px) {
+  .item-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .my-5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .mt-5 {
+    margin-top: 10px;
+  }
+  .gap-5 {
+    gap: 10px;
+  }
+  .py-5 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .p-5 {
+    padding: 10px;
+  }
+  .text-base{
+    font-size: 14px;
+  }
 }
 </style>

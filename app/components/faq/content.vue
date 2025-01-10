@@ -39,4 +39,7 @@ const open = ref(false);
     border-radius: 2px;
   }
 }
+
+@media screen and (max-width: 1176px) {
+}
 </style>

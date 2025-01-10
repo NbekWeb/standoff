@@ -14,9 +14,13 @@ function copyText(val) {
 </script>
 
 <template>
-  <div class="container text-grey-900 flex flex-col gap-5 text-base">
-    <div class="flex gap-5">
-      <div class="flex flex-grow gap-5 bg-dark-160 p-5 rounded-xs flex-col">
+  <div
+    class="container overflow-x-hidden text-grey-900 flex flex-col gap-5 text-base"
+  >
+    <div class="flex gap-5 xl-grid">
+      <div
+        class="flex col-span-2 flex-grow gap-5 bg-dark-160 p-5 rounded-xs flex-col"
+      >
         <div class="flex gap-5 flex-grow">
           <NuxtImg
             src="/images/emblema.png"
@@ -24,7 +28,7 @@ function copyText(val) {
             quality="100"
           />
 
-          <div class="flex text-base flex-grow flex-col justify-between">
+          <div class="flex text-base flex-grow flex-col gap-5">
             <div
               @click="withdraw"
               class="h-14 font-semibold bg-dark-200 rounded-xs point item flex items-center justify-center w-full"
@@ -54,16 +58,16 @@ function copyText(val) {
         </button>
       </div>
       <div
-        class="py-5 px-24 jutify-between bg-dark-160 rounded-xs text-base font-semibold flex flex-col items-center"
+        class="py-5 px-24 justify-between bg-dark-160 rounded-xs text-base font-semibold flex flex-col items-center"
       >
-        <span class="text-white">ЛЮБИМЫЙ КЕЙС</span>
+        <span class="text-white text-center">ЛЮБИМЫЙ КЕЙС</span>
         <NuxtImg src="/images/key1.png" class="item-img" />
         <span class=""> M4A1-S</span>
       </div>
       <div
         class="py-5 px-24 justify-between bg-dark-160 rounded-xs text-base font-semibold flex flex-col items-center"
       >
-        <span class="text-white">ЛЮБИМЫЙ КЕЙС</span>
+        <span class="text-white text-center">ЛЮБИМЫЙ КЕЙС</span>
         <NuxtImg src="/images/awm.png" class="item-img" />
         <span class=""> M4A1-S</span>
       </div>
@@ -190,5 +194,48 @@ function copyText(val) {
 }
 .item:hover {
   color: #fff;
+}
+
+@media screen and (max-width: 1280px) {
+  .xl-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .grid-6 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 1024px) {
+  .grid-6 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .gap-5 {
+    gap: 10px;
+  }
+  .grid-6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .px-24 {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .item-img {
+    width: 200px;
+  }
+  .btn.px-4{
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size:10px;
+  }
 }
 </style>

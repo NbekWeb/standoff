@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 const selected = ref(0);
-const promoCode = ref('');
+const promoCode = ref("");
 
 const check = ref(false);
 
@@ -81,7 +81,11 @@ const change = (i) => {
             <span class="text-orange-500">
               <IconCoin />
             </span>
-            <span>ВВЕДИТЕ СУММУ</span>
+            <input
+              type="text"
+              placeholder="ВВЕДИТЕ СУММУ"
+              class="text-base font-semibold text-white"
+            />
           </div>
           <div class="flex items-center gap-1 font-semibold">
             <span> БУДЕТ ЗАЧИСЛЕНО: </span>
@@ -114,15 +118,14 @@ const change = (i) => {
             >
               <IconCupon class="text-xl text-white" />
               <input
-              v-model="promoCode"
+                v-model="promoCode"
                 type="text"
                 placeholder="ПРОМОКОД"
                 class="text-base text-white"
               />
             </div>
             <button
-
-              class="btn w-full font-bold text-base "
+              class="btn w-full font-bold text-base"
               :class="
                 promoCode
                   ? 'btn-orange'
@@ -189,5 +192,22 @@ input::placeholder {
   color: $grey-900;
   font-size: 16px;
   font-weight: 600;
+}
+@media screen and (max-width: 1176px) {
+  .grid-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .gap-5 {
+    gap: 10px;
+  }
+  .p-5 {
+    padding: 10px;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 </style>

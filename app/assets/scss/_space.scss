@@ -91,7 +91,7 @@
   }
 
   .h-#{$i} {
-    height: $i*4px !important;
+    height: $i*4px;
   }
 
 }
@@ -164,7 +164,7 @@
   padding-left: 50px;
 }
 
-.px10{
+.px10 {
   padding-right: 10px;
   padding-left: 10px;
 }

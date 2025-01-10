@@ -22,7 +22,7 @@ onBeforeUnmount(() => {
   <div
     class="bg-dark-200 rounded-xs h-15 text-base relative text-grey-900 p-5 flex items-center gap-5"
   >
-    <span>ПОКАЗАТЬ СПОСОБЫ ОПЛАТЫ ДЛЯ:</span>
+    <span class="sm-hidden">ПОКАЗАТЬ СПОСОБЫ ОПЛАТЫ ДЛЯ:</span>
     <div
       @click.stop="() => (open = !open)"
       class="flex-grow point flex justify-between items-center"
@@ -37,7 +37,7 @@ onBeforeUnmount(() => {
     </div>
     <div
       v-show="open"
-      class="absolute opened w-full top-20 left-0 rounded-xs p-5 bg-dark-200 flex flex-col gap-5"
+      class="absolute opened w-full top-19 left-0 rounded-xs p-5 bg-dark-200 flex flex-col gap-5 z-999"
     >
       <div
         v-for="i in 3"
@@ -64,8 +64,26 @@ onBeforeUnmount(() => {
 
 .item {
   transition: 0.3s ease;
+
   &:hover {
     color: #fff;
   }
+}
+
+.z-999 {
+  z-index: 999;
+}
+
+.left-0 {
+  left: -2px;
+}
+
+@media screen and (max-width: 640px) {
+.sm-hidden{
+  display: none;
+}
+.top-19{
+  top:68px;
+}
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-5 items-center h-6 justify-center">
+  <div class="flex gap-5 items-center h-6  justify-center">
     <div
       v-for="(span, index) in 3"
       :key="index"

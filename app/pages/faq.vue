@@ -2,10 +2,10 @@
 
 <template>
   <div class="text-grey-900 container">
-    <h2 class="text-xl mb-5 font-semibold text-center text-white">
+    <h2 class="text-xl mb-5 font-semibold text-center text-white text-1">
       КАК ЭТО РАБОТАЕТ?
     </h2>
-    <div class="py-5 bg-dark-200 rounded-xs flex gap-5 justify-center">
+    <div class="py-5 bg-dark-200 rounded-xs flex gap-5 justify-start flex-wrap">
       <FaqStep text="Авторизируйтесь на сайте">
         <IconKeyhole />
       </FaqStep>
@@ -29,3 +29,25 @@
     <FaqContent class="mt-5" />
   </div>
 </template>
+<style scoped lang="scss">
+@media screen and (max-width: 768px) {
+  .justify-start,
+  .text-1 {
+    display: none;
+  }
+  .my-5 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .mt-5 {
+    margin-top: 16px;
+  }
+  .gap-5 {
+    gap: 16px;
+  }
+  .py-5{
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+</style>

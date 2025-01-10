@@ -40,7 +40,7 @@ const code = ref("");
             </span>
           </div>
         </div>
-        <div class="flex gap-5 h-14">
+        <div class="flex gap-5 h-14 sm-col">
           <div
             class="py-4 px-5 h-full rounded-xs bg-dark-300 flex gap-5 items-center flex-grow justify-between"
           >
@@ -202,6 +202,16 @@ const code = ref("");
 }
 
 @media screen and (max-width: 768px) {
+  .sm-col {
+    flex-direction: column;
+    .btn {
+      width: 100%;
+    }
+  }
+  .sm-col.h-14 {
+    height: auto;
+  }
+
   .my-5 {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -219,8 +229,15 @@ const code = ref("");
   .p-5 {
     padding: 10px;
   }
-  .text-base{
+  .text-base {
     font-size: 14px;
+  }
+  .px-10 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .w180 {
+    width: 130px;
   }
 }
 </style>

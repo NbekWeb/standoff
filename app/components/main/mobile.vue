@@ -147,7 +147,6 @@ onBeforeUnmount(() => {
   z-index: 9999;
   display: none;
 }
-
 @media screen and (max-width: 1024px) {
   .mobile {
     display: flex;
